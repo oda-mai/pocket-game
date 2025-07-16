@@ -1,0 +1,71 @@
+.blank1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blank2 {
+  text-align: center;
+  width: 50%;
+  color: #ffffff;
+  background: #ffc677; /* 柔らかオレンジ */
+  border-radius: 12px;
+  margin: 24px 8px;
+  padding: 25px 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blank2 a {
+  color: #FFF4E0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.blank2 a:hover {
+  text-decoration: underline;
+  color: #ffe5b4;
+}
+
+.field label {
+  font-weight: 500;
+  font-size: 15px;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.field input[type="email"],
+.field input[type="password"] {
+  width: 220px;
+  height: 36px;
+  background: #FFF4E0;
+  border-radius: 10px;
+  border: 1px solid #ffd5a1;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+.field input[type="email"]::placeholder,
+.field input[type="password"]::placeholder {
+  color: #aaa;
+}
+
+.actions input[type="submit"] {
+  width: 160px;
+  height: 38px;
+  background: #f89292;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.actions input[type="submit"]:hover {
+  background: #ffc8c8;
+}

@@ -1,0 +1,167 @@
+.post_form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .post_form input[type='radio']{
+    display: none;
+  }
+  .post_form label{
+    position: relative;
+    padding: 10px 10px 0;
+    color: gray;
+    cursor: pointer;
+    font-size: 30px; /*星の大きさを変更するときはここ*/
+  }
+  .post_form label .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 9px; /*星の上の説明書きの大きさを変更するときはここ*/
+    color: gray;
+  }
+  .post_form label:hover,
+  .post_form label:hover ~ label,
+  .post_form input[type='radio']:checked ~ label{
+    color: #ffcc00;
+  }
+
+ .star-rating {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 1em;
+    font-size: 25px;
+  }
+  .star-rating-front {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #ffcc33;
+  }
+  .star-rating-back {
+    display: inline-block;
+    color: #ccc;
+    
+  }
+
+.post-container {
+  margin: 50px auto;
+  width: 70%;
+  border: 2px solid #FFC679;
+  border-radius: 30px;
+  background-color: #fff8eb;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: #F99292;
+}
+
+/* テキスト入力 */
+input[type="text"] {
+  width: 95%;
+  max-width: 100%;
+  height: 40px;
+  margin: 0 auto 20px;
+  display: block;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+/* 星評価フォーム全体 */
+.post_form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 5px;
+}
+
+.post_form input[type='radio'] {
+  display: none;
+}
+
+.post_form label {
+  position: relative;
+  padding: 10px 10px 0;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 30px; /* 星のサイズ */
+  transition: color 0.2s;
+}
+
+.post_form label .text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 9px;
+  color: #aaa;
+}
+
+/* ホバー・選択時の色 */
+.post_form label:hover,
+.post_form label:hover ~ label,
+.post_form input[type='radio']:checked ~ label {
+  color: #F99292;
+}
+
+/* 評価表示用（詳細ページなど） */
+.star-rating {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #F99292;
+}
+
+.star-rating-back {
+  color: #ccc;
+}
+
+/* 投稿ボタン */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tweet-button {
+  padding: 12px 36px;
+  font-size: 18px;
+  background-color: #FFBC61;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tweet-button:hover {
+  background-color: #e8a04a;
+}

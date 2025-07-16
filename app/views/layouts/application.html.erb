@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Waitandplay</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css", media: "all", crossorigin: "anonymous" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <header>
+  <h1>ぽけっとあそび</h1>
+
+  <!-- ハンバーガーメニュー（右上の三本線） -->
+  <button class="hamburger" aria-label="メニュー" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- ナビゲーション -->
+  <nav class="header-list">
+    <ul>
+      <li><%= link_to "ホーム", hello_index_path %></li>
+      <li><%= link_to '診断', new_perfume_path %></li>
+      <li><%= link_to '投稿一覧', tweets_path %></li>
+      <li><%= link_to "新規投稿", new_tweet_path %></li>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+        <% else %>
+          <%= link_to 'ログイン', new_user_session_path %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+
+</html>

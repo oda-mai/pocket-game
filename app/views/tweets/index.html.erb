@@ -1,0 +1,33 @@
+<div class="centered-section">
+  <h3 class="section-title">投稿一覧</h3>
+</div>
+
+<div class="search-box">
+  <div class="search-box1">
+    <%= form_tag({controller: "tweets", action: "index"}, method: :get, class: "search-form") do %>
+      <%= text_field_tag :search, nil, placeholder: "🔍遊びタイトル", class: "search-input" %>
+    </div>
+      <%= submit_tag "検索", class: "search-button" %>
+    <% end %>
+</div>
+
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <h2 class="tweet-title">🎮 <%= t.name %></h2>
+
+      <p>👥 <%= t.number %></p>
+      <p>📝 <%= t.content %></p>
+
+  
+      <div class="star-rating">
+        <div class="star-rating-back">★★★★★</div>
+        <div class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</div>
+      </div>
+
+      <p class="tweet-actions">
+      <%= link_to "▶ 詳細へ", tweet_path(t.id), class: "action-button" %>
+      </p>
+    </div>
+  <% end %>
+</div>

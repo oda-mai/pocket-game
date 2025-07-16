@@ -1,0 +1,71 @@
+/* === ランキング全体のラッパー === */
+.ranking-wrapper {
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff8eb; /* ベージュ背景に */
+  border-radius: 20px;
+  width: 85%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* === 見出し === */
+.ranking-title {
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #F99292; /* ピンクで柔らかく */
+  border-bottom: 3px dashed #FFC679;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* === 各ランキングカード === */
+.ranking-card {
+  border-radius: 16px;
+  padding: 24px 30px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+  width: 90%;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ranking-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* === ラベル（1位2位3位）色分け === */
+.card1 .ranking-label {
+  color: #F99292; /* 1位：ピンク */
+}
+.card2 .ranking-label {
+  color: #FFBC61; /* 2位：オレンジ */
+}
+.card3 .ranking-label {
+  color: #FFC679; /* 3位：クリーム */
+}
+
+/* === 順位タイトル === */
+.ranking-label {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* === 内容エリア === */
+.ranking-description p {
+  margin: 8px 0;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #444;
+}
+
+/* === ハッシュタグ風の注釈 === */
+.hashtags {
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+}

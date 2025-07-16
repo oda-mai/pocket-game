@@ -1,0 +1,59 @@
+<%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+            <div class="container-sindan">
+                <div class="row">
+                 <div class="question-block">
+                    <div class="col-12">
+                        <p>Question1. スマホは使う？</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>使う</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>使わない</p>
+                    </div>
+                  </div>
+       
+                  <div class="question-block">
+                    <div class="col-12">
+                        <p>Question2. 何人で遊ぶ？</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>２～３人</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>4人以上</p>
+                    </div>
+                   </div>
+
+                   <div class="question-block">
+                    <div class="col-12">
+                        <p>Question3. 今の気分は？</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>静かに過ごしたい</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>盛り上がりたい</p>
+                    </div>
+                   </div>
+
+                  <div class="question-block">
+                    <div class="col-12">
+                        <p>Question4. あとどれくらい時間ある？</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>１５～３０分</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>３０分～１時間</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "3", nil %>１時間以上</p>
+                    </div>
+                   </div>
+                </div>
+            </div>
+            <div class="sindanbotan">
+                <%= f.submit "結果をみる" %>
+            </div>
+<% end %>

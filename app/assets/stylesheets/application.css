@@ -1,0 +1,75 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Kosugi Maru', 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;
+  background-color: #FFF4E0;
+  color: #656161;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ハンバーガーボタン */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fbb972;
+  border-radius: 2px;
+}
+
+/* ヘッダーリストの基本表示 */
+.header-list {
+  display: flex;
+  margin-left: auto;
+}
+
+/* モバイル表示用 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .header-list {
+    display: none;
+    flex-direction: column;
+    background-color: #fce6c5;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 99;
+  }
+
+  .header-list.open {
+    display: flex;
+  }
+
+  .header-list ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

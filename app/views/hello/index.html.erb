@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ぽけっとあそび</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- ヒーローセクション -->
+  <div class="hero-slider">
+    <div class="hero-slide hero-1 active">
+      <div class="hero-overlay">
+        <h1>ぽけっとあそび</h1>
+        <p>いつでも、どこでも、笑える時間を。</p>
+      </div>
+    </div>
+    <div class="hero-slide hero-2">
+      <div class="hero-overlay">
+        <h1>待ち時間を、楽しく。</h1>
+        <p>ほんの数分が、思い出に変わる。</p>
+      </div>
+    </div>
+    <div class="hero-slide hero-3">
+      <div class="hero-overlay">
+        <h1>スマホなしでも、盛り上がれる</h1>
+        <p>みんなで一緒に遊べるアイデア満載</p>
+      </div>
+    </div>
+  </div>
+
+
+<section class="intro-section">
+  <div class="intro-text">
+    <p>
+      遊びたい。笑いたい。仲良くなりたい。<br>
+      ただそれだけで、十分な「きっかけ」になる。<br><br>
+      ぽけっとあそびは、<br>
+      待ち時間やすきま時間を「楽しい時間」に変えるための<br>
+      アイデアが集まる場所です。<br><br>
+      ちょっと気まずい空気も、スマホがない瞬間も、<br>
+      ここにある“あそび”が、笑顔のスタートになる。<br>
+      ひとつの遊びから、関係が動き出す。<br><br>
+      このサイトは、そんな“つながり”のきっかけになる<br>
+      「遊びの拠点」を目指しています。
+    </p>
+  </div>
+</section>
+
+
+
+  <!-- JS for スライダー -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.hero-slide');
+      let current = 0;
+
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+<section class="ranking-section">
+  <h2 class="ranking-title">👑 遊んでみたい！注目ランキング 👑</h2>
+  <div class="ranking-card card1">
+    <h3 class="ranking-label">🥇 予測変換しりとり</h3>
+    <div class="ranking-description">
+      <p><strong>スマホのキーボードでしりとり！</strong></p>
+      <p>「あ」→「ありがとう」「アイス」など、<br>
+        予測に出た言葉しか使えないスリリングなルール！</p>
+      <p class="hashtags">#地味に性格出る #人間性バレる #会話が深まる</p>
+    </div>
+  </div>
+
+  <div class="ranking-card card2">
+    <h3 class="ranking-label">🥈 カタカナーシ</h3>
+    <div class="ranking-description">
+      <p><strong>カタカナ禁止でお題を伝える言葉バトル！</strong></p>
+      <p>「ラーメン」や「アイス」を“カタカナなし”で説明する発想ゲーム。<br>
+         スマホでお題を引くだけで、すぐ始められるのも魅力。</p>
+      <p><a href="https://www.katakana-game.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">▶ お題を引く</a></p>
+      <p class="hashtags">#発想勝負 #語彙力ゲー #地味に爆笑</p>
+    </div>
+  </div>
+
+  <div class="ranking-card card3">
+    <h3 class="ranking-label">🥉 ito（イト）</h3>
+    <div class="ranking-description">
+      <p><strong>数字をヒミツに“空気でそろえる”チーム戦！</strong></p>
+      <p>1〜100の数字をもとに、テーマに合った言葉を出し合う心理ゲーム。<br>
+         数字を言わずに“雰囲気”で並ぶスリルがクセになる。</p>
+      <p>例：「人気な寿司ネタ」<br>
+         数字90 →「マグロ」、数字30 →「ホタテ」</p>
+      <p class="hashtags">#感覚で通じ合え #チーム力試される #実は奥が深い</p>
+    </div>
+  </div>
+</section>

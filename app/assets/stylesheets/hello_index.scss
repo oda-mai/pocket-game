@@ -1,0 +1,189 @@
+:root {
+  --main-pink: #F99292;
+  --accent-yellow: #FFBC61;
+  --bg-ivory: #FFF4E0;
+  --bg-soft: #fff7eb;
+  --text-dark: #333;
+  --font-sans: 'Noto Sans JP', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+/* ==== ヒーロースライダー ==== */
+.hero-slider {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.15); /* ←白で少しぼかし感 */
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0; /* オーバーレイより下 */
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 12%;
+  left: 8%;
+  color: #fff;
+  max-width: 500px;
+  z-index: 2; /* テキストを前面に */
+}
+
+.hero-1 {
+  background-image: image-url('d615d05b908fd31b546d22cbdacfd4c7.jpg');
+}
+.hero-2 {
+  background-image: image-url('0320_01.jpg');
+}
+.hero-3 {
+  background-image: image-url('9952256fabdbe3777715981f491363cf.jpg');
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 12%;
+  left: 8%;
+  color: #fff;
+  max-width: 800px;
+}
+
+.hero-overlay h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--main-pink), var(--accent-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.hero-overlay p {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #ffffffcc;
+  text-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* ==== 説明セクション ==== */
+.intro-section {
+  background-color: var(--bg-soft);
+  padding: 60px 20px;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #6b6a6a;
+  text-align: center;
+}
+
+/* === ランキング全体 === */
+.ranking-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #feefd7; /* 背景色シンプルに */
+}
+
+/* === タイトル === */
+.ranking-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #F99292;
+  border-bottom: 3px dashed #FFC679;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* === カード === */
+.ranking-card {
+  border-radius: 16px;
+  padding: 24px 30px;
+  margin: 40px auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.06);
+  width: 90%;
+  max-width: 800px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ranking-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 順位ラベル */
+.card1 .ranking-label {
+  color: #F99292;
+}
+.card2 .ranking-label {
+  color: #FFBC61;
+}
+.card3 .ranking-label {
+  color: #FFC679;
+}
+
+.ranking-label {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* 説明文 */
+.ranking-description p {
+  margin: 8px 0;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #444;
+}
+
+.hashtags {
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .ranking-card {
+    padding: 20px;
+  }
+
+  .ranking-label {
+    font-size: 20px;
+  }
+
+  .ranking-description p {
+    font-size: 15px;
+  }
+}

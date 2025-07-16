@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag 'tweets_new', media: "all" %>
+
+<div class="post-container">
+  <h1 class="form-title">🎨遊びの記録を投稿しよう！</h1>
+
+  <%= form_for @tweet do |f| %>
+
+    <div class="field">
+      <label class="form-label">🎮 遊びの名前（タイトル）</label>
+      <%= f.text_field :name, placeholder: "例：しりとり山手線ゲーム", class: "input-box" %>
+    </div>
+
+    <div class="field">
+      <label class="form-label">👥 何人で遊んだ？</label>
+      <%= f.text_field :number, placeholder: "例：4人", class: "input-box" %>
+    </div>
+
+    <div class="field">
+      <label class="form-label">📝 コメント・感想</label>
+      <%= f.text_field :content, placeholder: "例：盛り上がって電車で笑いそうになった", class: "input-box" %>
+    </div>
+
+    <div class="field">
+      <label class="form-label">⭐️ 総合評価</label>
+      <div class="post_form">
+        <%= f.radio_button :overall, 5 ,id: 'star1'%>
+        <label for="star1"><span class="text">最高</span>★</label>
+
+        <%= f.radio_button :overall, 4 ,id: 'star2'%>
+        <label for="star2"><span class="text">良い</span>★</label>
+
+        <%= f.radio_button :overall, 3 ,id: 'star3'%>
+        <label for="star3"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :overall, 2 ,id: 'star4'%>
+        <label for="star4"><span class="text">悪い</span>★</label>
+
+        <%= f.radio_button :overall, 1 ,id: 'star5'%>
+        <label for="star5"><span class="text">最悪</span>★</label>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <%= f.submit "投稿する", class: "tweet-button" %>
+    </div>
+
+  <% end %>
+</div>

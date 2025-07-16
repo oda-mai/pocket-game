@@ -1,0 +1,100 @@
+.container-sindan {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff8eb; /* 薄いベージュ系 */
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+/* 質問ごとの区切りをつける */
+.container-sindan .row > div:nth-child(1),
+.container-sindan .row > div:nth-child(4),
+.container-sindan .row > div:nth-child(7),
+.container-sindan .row > div:nth-child(10) {
+  border-bottom: 1px solid #FFC679; /* 黄みのある薄い線 */
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+/* 質問文 */
+.container-sindan .col-12 p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #F99292; /* ピンク系 */
+  margin-bottom: 10px;
+  background: #FFF0CB; /* 優しい黄色背景 */
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* 選択肢の親 */
+.container-sindan .col-6 {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+/* 選択肢のpタグ */
+.container-sindan p {
+  background: #ffffff;
+  border: 2px solid #FFC679;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #444;
+  user-select: none;
+}
+
+.container-sindan p:hover {
+  background-color: #fff0cb;
+  border-color: #FFBC61;
+}
+
+/* チェックボックス */
+input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #ffb4f7;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* 診断ボタン */
+.sindanbotan {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.sindanbotan input[type="submit"] {
+  background: #FFBC61;
+  border: none;
+  padding: 15px 40px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sindanbotan input[type="submit"]:hover {
+  background: #f1a545;
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 600px) {
+  .container-sindan .col-6 {
+    width: 100%;
+  }
+}
+
+.container-sindan .question-block {
+  border-bottom: 1px solid #FFC679;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
