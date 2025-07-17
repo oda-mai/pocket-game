@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   const hamburger = document.querySelector(".hamburger");
   const headerList = document.querySelector(".header-list");
 
