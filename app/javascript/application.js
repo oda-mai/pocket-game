@@ -2,14 +2,11 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
-  const menu = document.querySelector(".header-list");
+  const headerList = document.querySelector(".header-list");
 
-  if (hamburger && menu) {
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("open");
-    });
-  }
+  hamburger.addEventListener("click", () => {
+    headerList.classList.toggle("open");
+  });
 });
-

@@ -8,25 +8,90 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Kosugi Maru', 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;
   background-color: #FFF4E0;
   color: #656161;
-  position: relative;
   overflow-x: hidden;
+  position: relative;
+  padding-top: 70px;
 }
 
-/* ハンバーガーボタン */
+
+/* hello/index ページだけ padding なしにする */
+body.hello-index {
+  padding-top: 0;
+}
+
+/* ハンバーガーメニューの位置を右上に重ねる */
+body.hello-index .hamburger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+/* 背景画像 */
+body::before {
+  content: "";
+  background: url('/assets/bg.jpg') no-repeat center center/cover; /* 必要に応じて画像パス修正 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* ナビゲーション */
+.header-list ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.header-list ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.header-list ul li a:hover {
+  color: #fbb972;
+}
+
+/* ハンバーガーメニュー：常に表示 */
 .hamburger {
-  display: none;
+  display: flex; /* ここを常にflexに変更 */
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
   height: 18px;
   background: none;
+
   border: none;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1001;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -36,40 +101,52 @@ body {
   display: block;
   height: 3px;
   width: 100%;
-  background-color: #fbb972;
+  background-color: #fbb972; /* ここが色 */
   border-radius: 2px;
 }
 
-/* ヘッダーリストの基本表示 */
+/* ナビメニュー：常に非表示 */
 .header-list {
-  display: flex;
-  margin-left: auto;
+  display: none; /* 常に非表示 */
+  flex-direction: column;
+  background-color: rgba(255, 239, 194, 0.442);
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 200px; /* 幅は適宜調整 */
+  padding: 20px;
+  z-index: 999;
+  border-radius: 0 0 0 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* モバイル表示用 */
+/* メニュー開いたら表示 */
+.header-list.open {
+  display: flex;
+}
+
+/* メニュー内リストは縦並び */
+.header-list ul {
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* リンク装飾 */
+.header-list ul li a {
+  text-decoration: none;
+  color: #ff672b;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.header-list ul li a:hover {
+  color: #fbb972;
+}
+
+/* モバイル用メディアクエリは不要か、もしくは削除してもOK */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .header-list {
-    display: none;
-    flex-direction: column;
-    background-color: #fce6c5;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    z-index: 99;
-  }
-
-  .header-list.open {
-    display: flex;
-  }
-
-  .header-list ul {
-    flex-direction: column;
-    gap: 10px;
-  }
+  /* ここは空にしてもOK */
 }
