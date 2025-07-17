@@ -70,3 +70,18 @@
 .actions input[type="submit"]:hover {
   background: #ffc8c8;
 }
+
+@media (max-width: 600px) {
+.field input[type="email"],
+.field input[type="password"] {
+  width: 150px;
+  height: 36px;
+  background: #FFF4E0;
+  border-radius: 10px;
+  border: 1px solid #ffd5a1;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.05);
+}
+}
