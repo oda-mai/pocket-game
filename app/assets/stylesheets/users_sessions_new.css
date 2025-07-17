@@ -1,3 +1,4 @@
+@media (max-width: 768px) {
 .blank1 {
   display: flex;
   justify-content: center;
@@ -68,4 +69,5 @@
 
 .actions input[type="submit"]:hover {
   background: #ffc8c8;
+}
 }
